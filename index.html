@@ -355,8 +355,17 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <div class="hf-row">
           <div class="hf-node hf-user" style="padding:14px 28px"><i class="fas fa-user" style="font-size:1.6rem"></i><span style="font-size:.9rem">Jij</span></div>
         </div>
+        <!-- Pijl naar Assistent -->
+        <div class="hf-single-arrow">
+          <div class="hf-arrow-line" style="height:12px"></div>
+          <div class="hf-arrow-label" style="font-size:.68rem;color:var(--red)"><i class="fas fa-comment" style="margin-right:3px"></i>praat met assistent</div>
+        </div>
+        <!-- Assistent node -->
+        <div class="hf-row">
+          <div class="hf-node" style="padding:14px 28px;background:rgba(239,108,108,.08);border:1px solid rgba(239,108,108,.2);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:6px"><i class="fas fa-message-bot" style="font-size:1.4rem;color:var(--red)"></i><span style="font-size:.9rem;color:var(--text-muted)">Chatbot</span></div>
+        </div>
         <!-- Uitleg -->
-        <div style="text-align:center;margin:10px 0 2px;font-size:.68rem;color:var(--red);letter-spacing:.5px"><i class="fas fa-arrows-left-right" style="margin-right:4px"></i>schakelt handmatig tussen tools</div>
+        <div style="text-align:center;margin:10px 0 2px;font-size:.68rem;color:var(--red);letter-spacing:.5px"><i class="fas fa-ban" style="margin-right:4px"></i>geen toegang tot je tools</div>
         <!-- Pijlen -->
         <div class="hf-arrows-down">
           <div class="hf-arrow-branch"></div>
@@ -377,7 +386,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
       </div>
       <div style="margin-top:16px;padding:12px 16px;background:rgba(239,108,108,.04);border:1px solid rgba(239,108,108,.12);border-radius:10px">
         <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;margin:0">
-          <strong style="color:var(--white)">Jij bent de integratie.</strong> Je kopieert context uit Jira naar Teams, plakt code in ChatGPT, en voert het resultaat handmatig door in VS Code. De AI weet niets over je project.
+          <strong style="color:var(--white)">Jij bent de integratie.</strong> Je kopieert context uit Jira naar Teams, plakt code in een chatbot, en voert het resultaat handmatig door in VS Code. De AI weet niets over je project.
         </p>
       </div>
     </div>
