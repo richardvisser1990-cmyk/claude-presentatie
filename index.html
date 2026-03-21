@@ -351,21 +351,20 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <h3 style="color:var(--text-muted);margin:0">AI als assistent</h3>
       </div>
       <div class="hero-flow-diagram">
-        <!-- Jij node -->
-        <div class="hf-row">
-          <div class="hf-node hf-user" style="padding:14px 28px"><i class="fas fa-user" style="font-size:1.6rem"></i><span style="font-size:.9rem">Jij</span></div>
-        </div>
-        <!-- Pijl naar Assistent -->
-        <div class="hf-single-arrow">
-          <div class="hf-arrow-line" style="height:12px"></div>
-          <div class="hf-arrow-label" style="font-size:.68rem;color:var(--red)"><i class="fas fa-comment" style="margin-right:3px"></i>praat met assistent</div>
-        </div>
-        <!-- Assistent node -->
-        <div class="hf-row">
-          <div class="hf-node" style="padding:14px 28px;background:rgba(239,108,108,.08);border:1px solid rgba(239,108,108,.2);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:6px"><i class="fas fa-message-bot" style="font-size:1.4rem;color:var(--red)"></i><span style="font-size:.9rem;color:var(--text-muted)">Chatbot</span></div>
+        <!-- Jij + Chatbot naast elkaar -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:6px">
+          <div class="hf-node hf-user" style="padding:12px 20px"><i class="fas fa-user" style="font-size:1.4rem"></i><span style="font-size:.85rem">Jij</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;min-width:60px">
+            <i class="fas fa-arrow-right" style="font-size:.7rem;color:var(--red)"></i>
+            <span style="font-size:.58rem;color:var(--red);white-space:nowrap">kopieer &amp; plak</span>
+            <i class="fas fa-arrow-left" style="font-size:.7rem;color:var(--red)"></i>
+          </div>
+          <div style="padding:12px 20px;background:rgba(239,108,108,.08);border:1px solid rgba(239,108,108,.2);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:4px"><i class="fas fa-comments" style="font-size:1.4rem;color:var(--red)"></i><span style="font-size:.85rem;color:var(--text-muted)">Chatbot</span></div>
         </div>
         <!-- Uitleg -->
-        <div style="text-align:center;margin:10px 0 2px;font-size:.68rem;color:var(--red);letter-spacing:.5px"><i class="fas fa-ban" style="margin-right:4px"></i>geen toegang tot je tools</div>
+        <div style="text-align:center;margin:6px 0 2px;font-size:.68rem;color:var(--red);letter-spacing:.5px"><i class="fas fa-ban" style="margin-right:4px"></i>geen toegang tot je tools</div>
+        <!-- Pijl van Jij naar tools -->
+        <div style="text-align:center;margin:4px 0;font-size:.62rem;color:var(--text-dim)"><i class="fas fa-arrow-down" style="margin-right:3px"></i>jij schakelt handmatig</div>
         <!-- Pijlen -->
         <div class="hf-arrows-down">
           <div class="hf-arrow-branch"></div>
