@@ -456,7 +456,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <span class="eco-tag">Projects</span>
         <span class="eco-tag">Web Search</span>
       </div>
-      <div class="eco-best"><strong>Voor wie:</strong> Iedereen &mdash; snel antwoord, geen setup nodig</div>
+      <div class="eco-best"><strong>Voor wie:</strong> Iedereen met een browser &mdash; geen installatie nodig</div>
     </div>
     <div class="eco-card cowork">
       <div class="eco-icon"><i class="fas fa-laptop"></i></div>
@@ -469,7 +469,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <span class="eco-tag">MCP</span>
         <span class="eco-tag">Skills</span>
       </div>
-      <div class="eco-best"><strong>Voor wie:</strong> PO's, analisten, managers &mdash; iedereen</div>
+      <div class="eco-best"><strong>Voor wie:</strong> PO's, analisten, managers</div>
     </div>
     <div class="eco-card code">
       <div class="eco-icon"><i class="fas fa-terminal"></i></div>
@@ -661,7 +661,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
     <div class="ctx-box with" data-label="Met projectcontext">
       <div class="ctx-prompt"><i class="fas fa-user" style="color:var(--green);margin-right:6px"></i>"Voeg error handling toe aan onze API"</div>
       <div class="ctx-output good">
-        → Vindt 12 endpoints zonder handling in je codebase<br>
+        → Vindt de endpoints zonder handling in je codebase<br>
         → C# middleware met jullie <code>ApiException</code> class<br>
         → Maakt een PR aan met unit tests erbij
       </div>
@@ -809,21 +809,16 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <div class="output-preview" style="font-size:.84rem;line-height:1.8;padding:20px">
           <span style="color:var(--accent);font-weight:700"># Standup Rapport</span><br><br>
           <span style="color:var(--text-dim)">## Trigger</span><br>
-          Wanneer de gebruiker vraagt om een standup,<br>
-          dagelijks overzicht, of sprint update.<br><br>
+          Bij vraag om standup of sprint update.<br><br>
           <span style="color:var(--text-dim)">## Stappen</span><br>
-          <span style="color:var(--green)">1.</span> Haal via Jira MCP alle tickets op die<br>
-          &nbsp;&nbsp;&nbsp;gisteren gewijzigd zijn in sprint DEV<br>
+          <span style="color:var(--green)">1.</span> Haal via Jira MCP tickets op die<br>
+          &nbsp;&nbsp;&nbsp;gisteren gewijzigd zijn<br>
           <span style="color:var(--green)">2.</span> Groepeer per teamlid<br>
           <span style="color:var(--green)">3.</span> Formatteer als:<br>
-          &nbsp;&nbsp;&nbsp;<span style="color:var(--blue)">**Naam**</span><br>
-          &nbsp;&nbsp;&nbsp;- Gisteren: [afgeronde taken]<br>
-          &nbsp;&nbsp;&nbsp;- Vandaag: [taken in progress]<br>
-          &nbsp;&nbsp;&nbsp;- Blockers: [impediments]<br><br>
+          &nbsp;&nbsp;&nbsp;- Gisteren / Vandaag / Blockers<br><br>
           <span style="color:var(--text-dim)">## Regels</span><br>
-          - Maximaal 2 zinnen per punt<br>
-          - Ticket-nummers altijd vermelden<br>
-          - Blockers in <span style="color:var(--red)">rood</span> markeren
+          - Max 2 zinnen per punt<br>
+          - Ticket-nummers vermelden
         </div>
       </div>
     </div>
@@ -878,29 +873,19 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <div class="output-preview" style="font-size:.82rem;line-height:1.75;padding:20px">
           <span style="color:var(--accent);font-weight:700"># Pre-commit Quality Gate</span><br><br>
           <span style="color:var(--text-dim)">## Strategie</span><br>
-          Spawn <span style="color:var(--white);font-weight:600">3 sub-agents parallel</span> voor<br>
-          maximale snelheid. Elke agent heeft<br>
-          &eacute;&eacute;n focus en rapporteert terug.<br><br>
-          <span style="color:var(--red);font-weight:600">## Agent 1: Security (Explore)</span><br>
-          Gebruik <span style="color:var(--blue)">Grep</span> om staged files te scannen:<br>
-          - API keys: <span style="color:var(--blue)">sk-*, AKIA*, ghp_*</span><br>
-          - Connection strings, .env waarden<br>
-          - Hardcoded wachtwoorden<br>
-          <span style="color:var(--red)">→ BLOCK als gevonden, toon locatie</span><br><br>
-          <span style="color:var(--blue);font-weight:600">## Agent 2: Quality (Explore)</span><br>
-          Controleer gewijzigde bestanden op:<br>
-          - <span style="color:var(--blue)">console.log</span> in productie code<br>
-          - Uitgecommentarieerde blokken &gt;3 regels<br>
-          - Ontbrekende TypeScript return types<br>
+          Spawn <span style="color:var(--white);font-weight:600">3 sub-agents parallel</span>.<br>
+          Elke agent rapporteert terug.<br><br>
+          <span style="color:var(--red);font-weight:600">## Agent 1: Security</span><br>
+          Scan staged files op secrets en keys.<br>
+          <span style="color:var(--red)">→ BLOCK als gevonden</span><br><br>
+          <span style="color:var(--blue);font-weight:600">## Agent 2: Quality</span><br>
+          Check op console.logs, dode code, types.<br>
           <span style="color:var(--orange)">→ WARN per bestand</span><br><br>
-          <span style="color:var(--green);font-weight:600">## Agent 3: Tests (General Purpose)</span><br>
-          Draai via <span style="color:var(--blue)">Bash</span>: <span style="color:var(--blue)">npm test</span><br>
-          Check dat nieuwe publieke functies<br>
-          een bijhorende test hebben.<br>
+          <span style="color:var(--green);font-weight:600">## Agent 3: Tests</span><br>
+          Draai <span style="color:var(--blue)">npm test</span>, check coverage.<br>
           <span style="color:var(--orange)">→ WARN als test ontbreekt</span><br><br>
-          <span style="color:var(--text-dim)">## Combineer resultaten</span><br>
-          Eén BLOCK = commit geweigerd.<br>
-          Anders: toon samenvatting en commit.
+          <span style="color:var(--text-dim)">## Combineer</span><br>
+          E&eacute;n BLOCK = commit geweigerd.
         </div>
       </div>
     </div>
@@ -934,30 +919,18 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <h3 style="margin-bottom:12px">Fragmenten uit de SKILL.md</h3>
         <div class="output-preview" style="font-size:.84rem;line-height:1.8;padding:20px">
           <span style="color:var(--accent);font-weight:700"># PPTX Skill</span><br><br>
-          <span style="color:var(--text-dim)">## Kleurpalet keuze</span><br>
+          <span style="color:var(--text-dim)">## Kleurpalet</span><br>
           Kies kleuren passend bij het <span style="color:var(--white)">onderwerp</span>.<br>
-          Als je kleuren in een willekeurige andere<br>
-          presentatie kan plakken, zijn ze niet<br>
-          specifiek genoeg. <span style="color:var(--red)">Nooit default blauw.</span><br><br>
-          <span style="color:var(--text-dim)">## Layout regels</span><br>
+          <span style="color:var(--red)">Nooit default blauw.</span><br><br>
+          <span style="color:var(--text-dim)">## Layout</span><br>
           - <span style="color:var(--red)">NOOIT</span> hetzelfde layout herhalen<br>
           - Elke slide heeft een visueel element<br>
-          - Wissel: kolommen, kaarten, callouts<br>
-          - Geen accent lijnen onder titels<br>
-          &nbsp;&nbsp;<span style="color:var(--text-dim)">(= hallmark van AI-generated slides)</span><br><br>
-          <span style="color:var(--text-dim)">## QA Pipeline (verplicht)</span><br>
+          - Geen accent lijnen onder titels<br><br>
+          <span style="color:var(--text-dim)">## QA Pipeline</span><br>
           <span style="color:var(--green)">1.</span> Genereer slides<br>
           <span style="color:var(--green)">2.</span> Converteer naar afbeeldingen<br>
-          <span style="color:var(--green)">3.</span> <span style="color:var(--white);font-weight:600">Start sub-agent</span> voor visuele inspectie<br>
-          &nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">"Assume there are problems.<br>
-          &nbsp;&nbsp;&nbsp;Your job is to find them."</span><br>
-          <span style="color:var(--green)">4.</span> Fix gevonden issues<br>
-          <span style="color:var(--green)">5.</span> Herhaal tot alles klopt<br><br>
-          <span style="color:var(--text-dim)">## Vermijd</span><br>
-          <span style="color:var(--red)">✗</span> Text-only slides<br>
-          <span style="color:var(--red)">✗</span> Centered body text<br>
-          <span style="color:var(--red)">✗</span> Low contrast elementen<br>
-          <span style="color:var(--red)">✗</span> Placeholder tekst vergeten
+          <span style="color:var(--green)">3.</span> <span style="color:var(--white);font-weight:600">Sub-agent</span> voor visuele inspectie<br>
+          <span style="color:var(--green)">4.</span> Fix issues, herhaal tot klaar
         </div>
       </div>
     </div>
@@ -975,7 +948,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
     <div class="tab active" onclick="switchTab(this,'agents')">Architectuur: 2 Modellen</div>
     <div class="tab" onclick="switchTab(this,'agents')">Sub-Agent Types + Skills</div>
     <div class="tab" onclick="switchTab(this,'agents')">Voorbeeld: PO + Dev</div>
-    <div class="tab" onclick="switchTab(this,'agents')">Voorbeeld: Enterprise Team</div>
+    <div class="tab" onclick="switchTab(this,'agents')">Voorbeeld: Agent Team</div>
   </div>
 
   <!-- TAB 0: Architectuur vergelijking -->
@@ -1045,8 +1018,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
 
         <!-- Key points -->
         <div style="font-size:.88rem;line-height:2;color:var(--text-muted)">
-          <div><span style="color:var(--green)">&#10004;</span> Agents zien elkaars werk</div>
-          <div><span style="color:var(--green)">&#10004;</span> Mailbox voor onderlinge communicatie</div>
+          <div><span style="color:var(--green)">&#10004;</span> Agents zien elkaars werk en communiceren onderling</div>
           <div><span style="color:var(--green)">&#10004;</span> Hogere kosten &mdash; elke agent is eigen sessie</div>
         </div>
       </div>
@@ -1055,7 +1027,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
     <!-- Takeaway -->
     <div class="takeaway-box" style="text-align:left;padding:16px 24px;margin-top:22px">
       <p style="font-size:.92rem;margin-bottom:0"><i class="fas fa-check-circle" style="margin-right:8px;color:var(--blue)"></i>
-        <strong>Sub-agents zijn de standaard voor 95% van de taken.</strong> Agent teams zet je apart aan wanneer agents elkaars werk moeten zien en daarop reageren.
+        <strong>Sub-agents zijn de gebruikelijke keuze.</strong> Agent teams zet je apart aan wanneer agents elkaars werk moeten zien en daarop reageren.
       </p>
     </div>
   </div>
@@ -1200,7 +1172,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
   </div>
 
   <!-- TAB 3: Enterprise -->
-  <div class="tab-content" data-tab="Voorbeeld: Enterprise Team">
+  <div class="tab-content" data-tab="Voorbeeld: Agent Team">
     <p style="color:var(--text-muted);margin-bottom:20px"><span style="display:inline-block;padding:2px 8px;background:rgba(126,203,161,.12);border:1px solid rgba(126,203,161,.25);border-radius:4px;font-size:.72rem;color:var(--green);margin-right:6px;vertical-align:middle">Agent Team patroon</span> Meerdere onafhankelijke agents met eigen worktrees, een gedeelde task board, en directe communicatie.</p>
     <div class="agent-flow" style="padding:24px">
       <div style="text-align:center;margin-bottom:12px;font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px">Opdracht: "Bouw een user dashboard met statistieken"</div>
@@ -1311,35 +1283,6 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
 
   <div class="split">
     <div>
-      <h3 style="margin-bottom:16px">Permission Model</h3>
-      <p style="font-size:.86rem;color:var(--text-muted);margin-bottom:20px">Drie niveaus per tool &mdash; van volledig automatisch tot volledig geblokkeerd.</p>
-
-      <div style="display:grid;gap:10px">
-        <div style="display:flex;gap:12px;align-items:center;padding:14px;background:var(--surface);border:1px solid rgba(126,203,161,.2);border-radius:10px">
-          <div style="width:36px;height:36px;border-radius:8px;background:rgba(126,203,161,.1);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0"><i class="fas fa-check"></i></div>
-          <div>
-            <strong style="color:var(--green);font-size:.88rem">Allow</strong>
-            <div style="font-size:.76rem;color:var(--text-muted)">Read, Glob, Grep, npm test &mdash; veilige operaties</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:12px;align-items:center;padding:14px;background:var(--surface);border:1px solid var(--border-accent);border-radius:10px">
-          <div style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0"><i class="fas fa-question"></i></div>
-          <div>
-            <strong style="color:var(--accent);font-size:.88rem">Ask</strong>
-            <div style="font-size:.76rem;color:var(--text-muted)">Edit config/*, Agent starten &mdash; vraagt bevestiging</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:12px;align-items:center;padding:14px;background:var(--surface);border:1px solid rgba(239,108,108,.2);border-radius:10px">
-          <div style="width:36px;height:36px;border-radius:8px;background:rgba(239,108,108,.1);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0"><i class="fas fa-ban"></i></div>
-          <div>
-            <strong style="color:var(--red);font-size:.88rem">Deny</strong>
-            <div style="font-size:.76rem;color:var(--text-muted)">rm -rf, git push --force &mdash; altijd geblokkeerd</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
       <h3 style="margin-bottom:16px">Hooks Pipeline</h3>
       <p style="font-size:.86rem;color:var(--text-muted);margin-bottom:20px">Scripts die automatisch draaien v&oacute;&oacute;r of na Claude's acties.</p>
 
@@ -1371,8 +1314,34 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
         </div>
       </div>
 
-      <div class="takeaway-box" style="text-align:left;padding:16px 20px;margin-top:16px">
-        <p style="font-size:.82rem"><i class="fas fa-shield-halved" style="margin-right:6px"></i>Enterprise teams gebruiken hooks voor: secret scanning, auto-formatting, audit logging, en compliance checks.</p>
+    </div>
+
+    <div>
+      <h3 style="margin-bottom:16px">Permission Model</h3>
+      <p style="font-size:.86rem;color:var(--text-muted);margin-bottom:20px">Drie niveaus per tool &mdash; van volledig automatisch tot volledig geblokkeerd.</p>
+
+      <div style="display:grid;gap:10px">
+        <div style="display:flex;gap:12px;align-items:center;padding:14px;background:var(--surface);border:1px solid rgba(126,203,161,.2);border-radius:10px">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(126,203,161,.1);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0"><i class="fas fa-check"></i></div>
+          <div>
+            <strong style="color:var(--green);font-size:.88rem">Allow</strong>
+            <div style="font-size:.76rem;color:var(--text-muted)">Read, Glob, Grep, npm test &mdash; veilige operaties</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;padding:14px;background:var(--surface);border:1px solid var(--border-accent);border-radius:10px">
+          <div style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0"><i class="fas fa-question"></i></div>
+          <div>
+            <strong style="color:var(--accent);font-size:.88rem">Ask</strong>
+            <div style="font-size:.76rem;color:var(--text-muted)">Edit config/*, Agent starten &mdash; vraagt bevestiging</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;padding:14px;background:var(--surface);border:1px solid rgba(239,108,108,.2);border-radius:10px">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(239,108,108,.1);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0"><i class="fas fa-ban"></i></div>
+          <div>
+            <strong style="color:var(--red);font-size:.88rem">Deny</strong>
+            <div style="font-size:.76rem;color:var(--text-muted)">rm -rf, git push --force &mdash; altijd geblokkeerd</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1393,7 +1362,7 @@ h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
     <div class="kp">
       <div class="kp-icon">🧩</div>
       <h4>Drie interfaces, &eacute;&eacute;n model</h4>
-      <p>Chat voor snelle vragen. Cowork voor documenten en analyses. Code voor developers. Iedereen kan aan de slag.</p>
+      <p>Chat voor snelle vragen. Cowork voor documenten en analyses. Code voor developers.</p>
     </div>
     <div class="kp">
       <div class="kp-icon">📐</div>
@@ -1466,7 +1435,7 @@ const tools=[
   {name:'Read',cat:'Bestanden',icon:'fa-eye',color:'blue',desc:'Leest bestanden: code, afbeeldingen, PDF\'s, notebooks.',ex:'Read("/src/components/Header.tsx")\n→ Volledige inhoud met regelnummers'},
   {name:'Edit',cat:'Bestanden',icon:'fa-pen',color:'blue',desc:'Exacte string-vervangingen. Stuurt alleen de diff.',ex:'Edit("Header.tsx",\n  old: "Hello",\n  new: "Welkom!")'},
   {name:'Write',cat:'Bestanden',icon:'fa-file-pen',color:'blue',desc:'Maakt nieuwe bestanden of overschrijft bestaande.',ex:'Write("/src/utils/helpers.ts",\n  content: "export function ...")'},
-  {name:'Glob',cat:'Zoeken',icon:'fa-folder-tree',color:'search',desc:'Vindt bestanden op naam/patroon. Razendsnel.',ex:'Glob("src/**/*.test.ts")\n→ Alle test bestanden'},
+  {name:'Glob',cat:'Zoeken',icon:'fa-folder-tree',color:'search',desc:'Vindt bestanden op naam/patroon.',ex:'Glob("src/**/*.test.ts")\n→ Alle test bestanden'},
   {name:'Grep',cat:'Zoeken',icon:'fa-magnifying-glass',color:'search',desc:'Zoekt in bestandsinhoud met regex. Gebouwd op ripgrep.',ex:'Grep("TODO|FIXME", type: "ts")\n→ Alle TODO\'s in TypeScript'},
   {name:'Bash',cat:'Uitvoering',icon:'fa-terminal',color:'exec',desc:'Shell commando\'s: van npm install tot docker compose.',ex:'Bash("npm test -- --coverage")\n→ Test resultaten + coverage'},
   {name:'WebSearch',cat:'Web',icon:'fa-globe',color:'web',desc:'Zoekt het web voor documentatie en actuele info.',ex:'WebSearch("Next.js 14 migration")\n→ Relevante resultaten'},
