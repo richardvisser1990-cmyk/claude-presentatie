@@ -9,42 +9,43 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0c0c18;--surface:#161630;--surface2:#1c1c38;--surface3:#232345;
-  --border:rgba(255,255,255,.07);--border-accent:rgba(212,165,116,.22);
-  --text:#e8e8f4;--text-muted:#9898b8;--text-dim:#686888;
-  --white:#ffffff;--accent:#d4a574;--accent-light:#e8c9a0;--accent-glow:rgba(212,165,116,.1);
-  --blue:#6eaadc;--green:#7ecba1;--red:#ef6c6c;--purple:#b88fe8;--pink:#e88fa0;
-  --orange:#e8a86e;--cyan:#6edcdc;
+  --bg:#F2F0EB;--surface:#ffffff;--surface2:#E8E5DF;--surface3:#DBD8D2;
+  --border:rgba(46,49,143,.1);--border-accent:rgba(139,109,24,.25);
+  --text:#2a2a3a;--text-muted:#4a4a60;--text-dim:#6a6a7a;
+  --white:#2E318F;--accent:#8B6D18;--accent-light:#6B5410;--accent-glow:rgba(139,109,24,.06);
+  --blue:#109FC6;--green:#2a8f5a;--red:#CE5368;--purple:#2E318F;--pink:#CE5368;
+  --orange:#DFAE41;--cyan:#109FC6;
   --sidebar-w:260px;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter','SF Pro Display','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}
-code{font-family:'SF Mono','Cascadia Code','Fira Code',monospace;font-size:.85em;background:rgba(255,255,255,.05);padding:2px 6px;border-radius:4px;color:var(--blue)}
+
+a{color:var(--purple);text-decoration:none}
+code{font-family:'SF Mono','Cascadia Code','Fira Code',monospace;font-size:.85em;background:rgba(46,49,143,.06);padding:2px 6px;border-radius:4px;color:var(--blue)}
 
 /* ===== SIDEBAR ===== */
-.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-w);height:100vh;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:100}
-.sidebar-brand{padding:24px 20px 18px;border-bottom:1px solid var(--border)}
-.sidebar-brand h2{font-size:.95rem;color:var(--accent);font-weight:700;letter-spacing:.3px}
-.sidebar-brand span{font-size:.68rem;color:var(--text-dim);display:block;margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
+.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-w);height:100vh;background:#2E318F;border-right:1px solid rgba(46,49,143,.2);display:flex;flex-direction:column;z-index:100}
+.sidebar-brand{padding:24px 20px 18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.sidebar-brand h2{font-size:.95rem;color:#F0C75E;font-weight:700;letter-spacing:.3px}
+.sidebar-brand span{font-size:.68rem;color:rgba(255,255,255,.55);display:block;margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
 .sidebar-nav{flex:1;overflow-y:auto;padding:12px 0}
-.sidebar-nav a{display:flex;align-items:center;gap:12px;padding:11px 20px;font-size:.82rem;color:var(--text-muted);transition:.2s;border-left:2px solid transparent}
-.sidebar-nav a:hover{color:var(--text);background:rgba(255,255,255,.03)}
-.sidebar-nav a.active{color:var(--accent);background:var(--accent-glow);border-left-color:var(--accent);font-weight:600}
+.sidebar-nav a{display:flex;align-items:center;gap:12px;padding:11px 20px;font-size:.82rem;color:rgba(255,255,255,.65);transition:.2s;border-left:2px solid transparent}
+.sidebar-nav a:hover{color:#ffffff;background:rgba(255,255,255,.08)}
+.sidebar-nav a.active{color:#F0C75E;background:rgba(139,109,24,.1);border-left-color:#F0C75E;font-weight:600}
 .nav-icon{width:22px;text-align:center;font-size:.78rem;opacity:.6}
 .sidebar-nav a.active .nav-icon{opacity:1}
-.sidebar-foot{padding:16px 20px;border-top:1px solid var(--border);font-size:.68rem;color:var(--text-dim)}
+.sidebar-foot{padding:16px 20px;border-top:1px solid rgba(255,255,255,.12);font-size:.68rem;color:rgba(255,255,255,.4)}
 
 /* ===== MAIN ===== */
 .main{margin-left:var(--sidebar-w)}
 section{min-height:100vh;padding:80px 64px;display:flex;flex-direction:column;justify-content:center}
-section:nth-child(even){background:rgba(0,0,0,.2)}
-.section-tag{font-size:.75rem;text-transform:uppercase;letter-spacing:4px;color:var(--accent);margin-bottom:12px;font-weight:700}
+section:nth-child(even){background:rgba(46,49,143,.03)}
+.section-tag{font-size:.9rem;text-transform:uppercase;letter-spacing:4px;color:var(--accent);margin-bottom:14px;font-weight:700}
 h1{font-size:3.4rem;font-weight:800;line-height:1.08;margin-bottom:16px;color:var(--white);letter-spacing:-.02em}
 h1 em{font-style:normal;color:var(--accent)}
-h2{font-size:2.4rem;font-weight:700;line-height:1.12;margin-bottom:12px;color:var(--white);letter-spacing:-.01em}
-h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
-.lead{font-size:1.15rem;color:var(--text-muted);max-width:660px;margin-bottom:44px;line-height:1.7}
+h2{font-size:2.6rem;font-weight:700;line-height:1.12;margin-bottom:14px;color:var(--white);letter-spacing:-.01em}
+h3{font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:10px}
+.lead{font-size:1.3rem;color:var(--text-muted);max-width:700px;margin-bottom:44px;line-height:1.7}
 
 /* ===== HERO ===== */
 .hero{align-items:center;text-align:center}
@@ -55,28 +56,28 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .hero-arrow-col .arrow-label{font-size:.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-weight:700}
 .model-panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-align:center}
 .model-panel.old{opacity:.85}
-.model-panel h3{margin-bottom:18px;font-size:1rem}
+.model-panel h3{margin-bottom:18px;font-size:1.15rem}
 
 /* Hero flow diagrams */
 .hero-flow-diagram{padding:16px 0}
 .hf-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-.hf-node{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 20px;border-radius:12px;font-size:.82rem;font-weight:600}
-.hf-node i{font-size:1.4rem;margin-bottom:2px}
-.hf-user{background:var(--surface3);border:2px solid rgba(255,255,255,.15);color:var(--white)}
-.hf-claude{background:linear-gradient(135deg,rgba(212,165,116,.2),rgba(212,165,116,.08));border:2px solid var(--accent);color:var(--accent)}
-.hf-tool{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 7px;border-radius:8px;background:var(--surface3);border:1px solid var(--border);min-width:52px;font-size:.6rem;color:var(--text-muted)}
-.hf-tool i{font-size:.9rem;margin-bottom:1px}
+.hf-node{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 20px;border-radius:12px;font-size:1rem;font-weight:600}
+.hf-node i{font-size:1.6rem;margin-bottom:2px}
+.hf-user{background:var(--surface3);border:2px solid rgba(46,49,143,.2);color:var(--white)}
+.hf-claude{background:linear-gradient(135deg,rgba(46,49,143,.12),rgba(46,49,143,.04));border:2px solid var(--purple);color:var(--purple)}
+.hf-tool{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 10px;border-radius:8px;background:var(--surface3);border:1px solid var(--border);min-width:58px;font-size:.78rem;color:var(--text-muted)}
+.hf-tool i{font-size:1.05rem;margin-bottom:1px}
 .model-panel:not(.old) .hf-tool{border-color:var(--border-accent)}
 .hf-arrows-down{display:flex;justify-content:center;gap:28px;padding:8px 0}
 .hf-arrow-branch{width:2px;height:22px;background:var(--text-dim);opacity:.4}
 .hf-arrow-branch.lit{background:var(--accent);opacity:.6}
 .hf-single-arrow{display:flex;flex-direction:column;align-items:center;padding:4px 0}
 .hf-arrow-line{width:2px;height:16px;background:var(--accent);opacity:.5}
-.hf-arrow-label{font-size:.62rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin:3px 0}
+.hf-arrow-label{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin:3px 0}
 .hf-connectors{text-align:center;margin-top:10px}
-.hf-x-mark{font-size:.72rem;color:var(--red);font-weight:600}
-.hf-check-mark{font-size:.72rem;color:var(--green);font-weight:600}
-.model-panel .caption{margin-top:16px;font-size:.82rem;color:var(--text-muted);line-height:1.5}
+.hf-x-mark{font-size:.88rem;color:var(--red);font-weight:600}
+.hf-check-mark{font-size:.88rem;color:var(--green);font-weight:600}
+.model-panel .caption{margin-top:16px;font-size:1rem;color:var(--text-muted);line-height:1.5}
 .model-panel:not(.old) .caption{color:var(--accent-light)}
 .old .hf-tool{opacity:.75}
 
@@ -91,44 +92,44 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .eco-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px}
 .eco-card.chat .eco-icon{background:rgba(239,108,108,.1);color:var(--red)}
 .eco-card.code .eco-icon{background:rgba(110,170,220,.1);color:var(--blue)}
-.eco-card.cowork .eco-icon{background:rgba(212,165,116,.1);color:var(--accent)}
-.eco-card h3{font-size:1rem;margin-bottom:4px}
-.eco-card .eco-sub{font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
-.eco-card p{font-size:.84rem;color:var(--text-muted);margin-bottom:14px}
+.eco-card.cowork .eco-icon{background:rgba(46,49,143,.1);color:var(--accent)}
+.eco-card h3{font-size:1.15rem;margin-bottom:4px}
+.eco-card .eco-sub{font-size:.82rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.eco-card p{font-size:1rem;color:var(--text-muted);margin-bottom:14px}
 .eco-tags{display:flex;flex-wrap:wrap;gap:6px}
-.eco-tag{font-size:.68rem;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,.04);color:var(--text-muted)}
-.eco-best{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text-muted)}
+.eco-tag{font-size:.82rem;padding:4px 10px;border-radius:4px;background:rgba(46,49,143,.05);color:var(--text-muted)}
+.eco-best{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:.95rem;color:var(--text-muted)}
 .eco-best strong{color:var(--white)}
 
 /* ===== CONTEXT SECTION ===== */
 .context-compare{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
 .ctx-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative}
-.ctx-box::before{content:attr(data-label);position:absolute;top:-10px;left:20px;background:var(--bg);padding:0 8px;font-size:.68rem;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+.ctx-box::before{content:attr(data-label);position:absolute;top:-10px;left:20px;background:var(--bg);padding:0 8px;font-size:.82rem;text-transform:uppercase;letter-spacing:2px;font-weight:700}
 .ctx-box.without::before{color:var(--red)}
 .ctx-box.with::before{color:var(--green)}
-.ctx-prompt{font-size:.84rem;color:var(--text-muted);padding:12px;background:rgba(255,255,255,.03);border-radius:8px;margin-bottom:14px;font-family:'SF Mono',monospace}
-.ctx-output{font-size:.84rem;line-height:1.7}
+.ctx-prompt{font-size:1rem;color:var(--text-muted);padding:12px;background:rgba(46,49,143,.04);border-radius:8px;margin-bottom:14px;font-family:'SF Mono',monospace}
+.ctx-output{font-size:1rem;line-height:1.7}
 .ctx-output.bad{color:var(--text-dim)}
 .ctx-output.good{color:var(--text)}
 .context-stack{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap}
-.ctx-chip{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:.82rem;transition:.3s}
+.ctx-chip{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:1rem;transition:.3s}
 .ctx-chip:hover{border-color:var(--accent);background:var(--accent-glow)}
 .ctx-chip i{color:var(--accent);font-size:.9rem}
 .ctx-chip .chip-label{color:var(--white);font-weight:600}
-.ctx-chip .chip-desc{color:var(--text-muted);font-size:.74rem}
+.ctx-chip .chip-desc{color:var(--text-muted);font-size:.9rem}
 
 /* ===== TOOL RING ===== */
 .tg-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.2s}
 .tg-item:hover,.tg-item.active{border-color:var(--accent);background:var(--accent-glow)}
-.tg-item.active{box-shadow:0 0 12px rgba(212,165,116,.1)}
+.tg-item.active{box-shadow:0 0 12px rgba(46,49,143,.1)}
 .tg-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
 .tg-icon.files{background:rgba(110,170,220,.1);color:var(--blue)}
 .tg-icon.search{background:rgba(126,203,161,.1);color:var(--green)}
 .tg-icon.exec{background:rgba(184,143,232,.1);color:var(--purple)}
-.tg-icon.delegate{background:rgba(212,165,116,.1);color:var(--accent)}
+.tg-icon.delegate{background:rgba(46,49,143,.1);color:var(--accent)}
 .tg-icon.web{background:rgba(110,220,220,.1);color:var(--cyan)}
-.tg-name{font-size:.78rem;font-weight:600;color:var(--white)}
-.tg-cat{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
+.tg-name{font-size:.95rem;font-weight:600;color:var(--white)}
+.tg-cat{font-size:.78rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
 
 /* Tool detail popup */
 
@@ -139,9 +140,9 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .sf-step:last-child{border-radius:0 12px 12px 0}
 .sf-step:not(:last-child)::after{content:'';position:absolute;right:-8px;top:50%;transform:translateY(-50%);width:0;height:0;border:8px solid transparent;border-left-color:var(--accent);z-index:1;opacity:.5}
 .sf-step .sf-icon{font-size:1.4rem;margin-bottom:8px}
-.sf-step .sf-label{font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.sf-step h4{font-size:.88rem;color:var(--white);margin-bottom:4px}
-.sf-step p{font-size:.74rem;color:var(--text-muted);line-height:1.4}
+.sf-step .sf-label{font-size:.85rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.sf-step h4{font-size:1.05rem;color:var(--white);margin-bottom:4px}
+.sf-step p{font-size:.9rem;color:var(--text-muted);line-height:1.5}
 .sf-step.active{background:var(--accent-glow);border-color:var(--accent)}
 
 /* Skill example boxes */
@@ -149,13 +150,13 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .skill-ex{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:.3s}
 .skill-ex:hover{border-color:var(--border-accent)}
 .skill-ex-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.skill-ex-badge{font-size:.65rem;padding:3px 8px;border-radius:4px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.skill-ex-badge{font-size:.8rem;padding:4px 10px;border-radius:4px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .skill-ex-badge.simple{background:rgba(126,203,161,.1);color:var(--green)}
 .skill-ex-badge.advanced{background:rgba(184,143,232,.1);color:var(--purple)}
 .skill-io{display:grid;grid-template-columns:auto 1fr auto 1fr;gap:8px;align-items:center;margin-top:14px;font-size:.8rem}
 .skill-io .io-arrow{color:var(--accent);text-align:center}
-.skill-io .io-box{background:rgba(0,0,0,.2);padding:10px;border-radius:6px;font-family:'SF Mono',monospace;font-size:.76rem;color:var(--blue)}
-.skill-io .io-label{font-size:.68rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.skill-io .io-box{background:rgba(46,49,143,.03);padding:10px;border-radius:6px;font-family:'SF Mono',monospace;font-size:.92rem;color:var(--blue)}
+.skill-io .io-label{font-size:.82rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;text-align:center}
 
 /* ===== MCP VISUAL ===== */
 .mcp-arch{display:flex;flex-direction:column;align-items:center;gap:0;margin:28px 0}
@@ -163,25 +164,25 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .mcp-node{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;text-align:center;min-width:120px;transition:.3s}
 .mcp-node:hover{border-color:var(--accent);transform:translateY(-2px)}
 .mcp-node i{font-size:1.2rem;display:block;margin-bottom:6px}
-.mcp-node .mn-name{font-size:.82rem;font-weight:600;color:var(--white)}
-.mcp-node .mn-desc{font-size:.68rem;color:var(--text-muted);margin-top:2px}
-.mcp-node.claude-node{background:linear-gradient(135deg,rgba(212,165,116,.12),rgba(212,165,116,.03));border-color:var(--accent);padding:18px 28px}
+.mcp-node .mn-name{font-size:1rem;font-weight:600;color:var(--white)}
+.mcp-node .mn-desc{font-size:.85rem;color:var(--text-muted);margin-top:2px}
+.mcp-node.claude-node{background:linear-gradient(135deg,rgba(46,49,143,.1),rgba(46,49,143,.03));border-color:var(--purple);padding:18px 28px}
 .mcp-connector{display:flex;flex-direction:column;align-items:center;padding:8px 0}
 .mcp-connector .mc-line{width:2px;height:16px;background:var(--accent);opacity:.3}
-.mcp-connector .mc-label{font-size:.62rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px;margin:4px 0}
+.mcp-connector .mc-label{font-size:.78rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px;margin:4px 0}
 .mcp-flow-example{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-top:28px;max-width:800px;width:100%;align-self:center}
 .mcp-flow-steps{display:flex;align-items:center;gap:0;margin-top:16px;overflow-x:auto}
 .mf-step{text-align:center;padding:12px;min-width:130px;flex:1}
 .mf-step .mf-icon{font-size:1.6rem;margin-bottom:6px}
-.mf-step .mf-text{font-size:.76rem;color:var(--text-muted);line-height:1.4}
+.mf-step .mf-text{font-size:.92rem;color:var(--text-muted);line-height:1.5}
 .mf-step .mf-label{font-size:.8rem;font-weight:600;color:var(--white);margin-bottom:2px}
 .mf-arrow{color:var(--accent);font-size:1rem;flex-shrink:0;opacity:.5}
 
 /* ===== AGENTS ===== */
 .tabs{display:flex;gap:4px;margin-bottom:24px;flex-wrap:wrap}
-.tab{padding:10px 20px;border-radius:8px;font-size:.84rem;font-weight:500;background:var(--surface);color:var(--text-muted);cursor:pointer;border:1px solid transparent;transition:.2s}
+.tab{padding:12px 22px;border-radius:8px;font-size:1rem;font-weight:500;background:var(--surface);color:var(--text-muted);cursor:pointer;border:1px solid transparent;transition:.2s}
 .tab:hover{color:var(--text);background:var(--surface2)}
-.tab.active{background:var(--accent);color:var(--bg);font-weight:700}
+.tab.active{background:var(--purple);color:#ffffff;font-weight:700}
 .tab-content{display:none;animation:fadeUp .35s ease}
 .tab-content.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -193,8 +194,8 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .af-node:hover{border-color:var(--accent)}
 .af-node .afn-icon{font-size:1.3rem;margin-bottom:4px}
 .af-node .afn-title{font-size:.84rem;font-weight:600;color:var(--white)}
-.af-node .afn-sub{font-size:.7rem;color:var(--text-muted);margin-top:2px}
-.af-node.orchestrator{background:linear-gradient(135deg,rgba(212,165,116,.12),rgba(212,165,116,.03));border-color:var(--accent)}
+.af-node .afn-sub{font-size:.88rem;color:var(--text-muted);margin-top:2px}
+.af-node.orchestrator{background:linear-gradient(135deg,rgba(46,49,143,.1),rgba(46,49,143,.03));border-color:var(--purple)}
 .af-connector{display:flex;flex-direction:column;align-items:center;gap:0;padding:4px 0}
 .af-vline{width:2px;height:18px;background:var(--accent);opacity:.3}
 .af-hline{width:40px;height:2px;background:var(--accent);opacity:.3}
@@ -202,20 +203,20 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .af-branch{display:flex;flex-direction:column;align-items:center}
 
 /* Task board */
-.task-board{background:rgba(0,0,0,.2);border:1px dashed var(--accent);border-radius:10px;padding:14px 18px;margin:10px 0;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.tb-task{font-size:.74rem;padding:6px 12px;border-radius:6px;display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border)}
+.task-board{background:rgba(46,49,143,.03);border:1px dashed var(--accent);border-radius:10px;padding:14px 18px;margin:10px 0;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.tb-task{font-size:.9rem;padding:8px 14px;border-radius:6px;display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border)}
 .tb-task .tb-status{width:8px;height:8px;border-radius:50%}
 .tb-task .tb-status.done{background:var(--green)}
 .tb-task .tb-status.wip{background:var(--accent)}
 .tb-task .tb-status.todo{background:var(--text-dim)}
 
 /* Output preview boxes */
-.output-preview{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:12px;font-size:.78rem;font-family:'SF Mono',monospace;color:var(--text-muted);line-height:1.5}
-.output-preview .file-badge{display:inline-block;padding:2px 6px;border-radius:3px;font-size:.66rem;font-weight:700;margin-right:6px;text-transform:uppercase}
+.output-preview{background:rgba(46,49,143,.04);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:12px;font-size:.92rem;font-family:'SF Mono',monospace;color:var(--text-muted);line-height:1.5}
+.output-preview .file-badge{display:inline-block;padding:3px 8px;border-radius:3px;font-size:.8rem;font-weight:700;margin-right:6px;text-transform:uppercase}
 .output-preview .file-badge.ts{background:rgba(110,170,220,.15);color:var(--blue)}
 .output-preview .file-badge.test{background:rgba(126,203,161,.15);color:var(--green)}
 .output-preview .file-badge.yml{background:rgba(184,143,232,.15);color:var(--purple)}
-.output-preview .file-badge.md{background:rgba(212,165,116,.15);color:var(--accent)}
+.output-preview .file-badge.md{background:rgba(46,49,143,.15);color:var(--accent)}
 
 /* ===== HOOKS ===== */
 .hook-demo{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin:20px 0}
@@ -224,9 +225,9 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .ht-stage:first-child{border-radius:10px 0 0 10px}
 .ht-stage:last-child{border-radius:0 10px 10px 0}
 .ht-stage:not(:last-child)::after{content:'▶';position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:var(--accent);z-index:1;font-size:.7rem;opacity:.6}
-.ht-stage .ht-label{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:6px}
+.ht-stage .ht-label{font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:6px}
 .ht-stage .ht-title{font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:4px}
-.ht-stage .ht-desc{font-size:.72rem;color:var(--text-muted)}
+.ht-stage .ht-desc{font-size:.9rem;color:var(--text-muted)}
 .ht-stage.blocked{background:rgba(239,108,108,.06);border-color:rgba(239,108,108,.3)}
 .ht-stage.allowed{background:rgba(126,203,161,.06);border-color:rgba(126,203,161,.3)}
 
@@ -244,9 +245,9 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .pc-io-box.input{background:rgba(110,170,220,.06);border:1px solid rgba(110,170,220,.15)}
 .pc-io-box.output{background:rgba(126,203,161,.06);border:1px solid rgba(126,203,161,.15)}
 .pc-io-box .io-icon{font-size:1.4rem;margin-bottom:4px}
-.pc-io-box .io-text{font-size:.72rem;color:var(--text-muted)}
+.pc-io-box .io-text{font-size:.9rem;color:var(--text-muted)}
 .pc-io-arrow{color:var(--accent);font-size:.9rem}
-.pc-time{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:.72rem;color:var(--accent);background:var(--accent-glow);padding:4px 10px;border-radius:4px}
+.pc-time{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:.88rem;color:var(--accent);background:var(--accent-glow);padding:5px 12px;border-radius:4px}
 
 /* ===== CTA ===== */
 .cta-row{display:flex;gap:20px;margin-top:36px;flex-wrap:wrap;justify-content:center}
@@ -254,20 +255,20 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 .cta-item:hover{border-color:var(--accent);transform:translateY(-2px)}
 .cta-item i{font-size:1.4rem;color:var(--accent);margin-bottom:10px}
 .cta-item h4{font-size:.88rem;color:var(--white);margin-bottom:4px}
-.cta-item p{font-size:.74rem;color:var(--text-muted)}
-.takeaway-box{background:linear-gradient(135deg,rgba(212,165,116,.08),transparent);border:1px solid var(--border-accent);border-radius:14px;padding:28px;text-align:center;margin:24px 0}
+.cta-item p{font-size:.92rem;color:var(--text-muted)}
+.takeaway-box{background:linear-gradient(135deg,rgba(46,49,143,.06),transparent);border:1px solid rgba(46,49,143,.15);border-radius:14px;padding:28px;text-align:center;margin:24px 0}
 .takeaway-box p{font-size:1.05rem;color:var(--accent-light);font-weight:500}
 .key-points{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:32px}
 .kp{flex:1;min-width:200px;max-width:280px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;text-align:center}
 .kp-icon{font-size:1.8rem;margin-bottom:10px}
 .kp h4{font-size:.9rem;color:var(--white);margin-bottom:6px}
-.kp p{font-size:.78rem;color:var(--text-muted)}
+.kp p{font-size:.95rem;color:var(--text-muted)}
 
 /* ===== SPLIT ===== */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 
 /* ===== MOBILE ===== */
-.mobile-toggle{display:none;position:fixed;top:14px;left:14px;z-index:200;width:40px;height:40px;border-radius:10px;border:none;background:var(--surface);color:var(--accent);font-size:1rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.mobile-toggle{display:none;position:fixed;top:14px;left:14px;z-index:200;width:40px;height:40px;border-radius:10px;border:none;background:var(--surface);color:var(--purple);font-size:1rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.12)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:.3s}
   .sidebar.open{transform:translateX(0)}
@@ -318,7 +319,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
   <div style="max-width:740px;margin:0 auto;text-align:center">
     <div class="section-tag">Vandaag</div>
     <h1 style="font-size:3rem;margin-bottom:12px">Claude — <em>Introductie &amp; Inspiratie</em></h1>
-    <p style="font-size:1rem;color:var(--text-muted);margin-bottom:48px;line-height:1.7">Van chatbot naar autonomous agent &mdash; wat Claude kan, hoe het werkt, en waarom het jouw workflow verandert.</p>
+    <p style="font-size:1rem;color:var(--text-muted);margin-bottom:48px;line-height:1.7">Van chatbot naar autonomous agent &mdash; wat Claude kan, hoe het werkt, en wat dat betekent voor ons dagelijks werk.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px">
       <div style="padding:28px 28px;background:var(--surface);border:2px solid var(--accent);border-radius:14px;text-align:left">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
@@ -344,7 +345,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="hero" class="hero">
   <div class="section-tag">De Shift</div>
   <h1>Van Assistant naar <em>Agentic AI</em></h1>
-  <p class="lead">Niet langer jij die tussen tools schakelt &mdash; Claude orkestreert alles vanuit &eacute;&eacute;n gesprek.</p>
+  <p class="lead">Het verschil tussen een chatbot en een agent: een agent kan zelf tools gebruiken, bestanden aanpassen en taken uitvoeren.</p>
 
   <div class="hero-compare">
     <!-- OLD MODEL -->
@@ -387,16 +388,16 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         </div>
       </div>
       <div style="margin-top:16px;padding:12px 16px;background:rgba(239,108,108,.04);border:1px solid rgba(239,108,108,.12);border-radius:10px">
-        <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;margin:0">
+        <p style="font-size:1rem;color:var(--text-muted);line-height:1.6;margin:0">
           <strong style="color:var(--white)">Jij bent de integratie.</strong> Je kopieert context uit Jira naar Teams, plakt code in een chatbot, en voert het resultaat handmatig door in VS Code. De AI weet niets over je project.
         </p>
       </div>
     </div>
 
     <!-- NEW MODEL -->
-    <div class="model-panel" style="border-color:rgba(212,165,116,.2);background:linear-gradient(180deg,var(--surface),rgba(212,165,116,.03))">
+    <div class="model-panel" style="border-color:rgba(46,49,143,.25);background:linear-gradient(180deg,var(--surface),rgba(46,49,143,.05))">
       <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:18px">
-        <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,165,116,.15);display:flex;align-items:center;justify-content:center"><i class="fas fa-bolt" style="font-size:.7rem;color:var(--accent)"></i></div>
+        <div style="width:28px;height:28px;border-radius:50%;background:rgba(46,49,143,.15);display:flex;align-items:center;justify-content:center"><i class="fas fa-bolt" style="font-size:.7rem;color:var(--accent)"></i></div>
         <h3 style="color:var(--accent);margin:0">AI als agent</h3>
       </div>
       <div class="hero-flow-diagram">
@@ -434,7 +435,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         </div>
       </div>
       <div style="margin-top:16px;padding:12px 16px;background:rgba(126,203,161,.04);border:1px solid rgba(126,203,161,.12);border-radius:10px">
-        <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;margin:0">
+        <p style="font-size:1rem;color:var(--text-muted);line-height:1.6;margin:0">
           <strong style="color:var(--white)">Claude is de integratie.</strong> Jij geeft &eacute;&eacute;n opdracht. Claude leest je Jira-ticket, schrijft de code in VS Code, runt de tests, en maakt een PR &mdash; alles met volledige project-context.
         </p>
       </div>
@@ -446,25 +447,25 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="ecosysteem">
   <div class="section-tag">Het Platform</div>
   <h2>Drie producten, dezelfde AI</h2>
-  <p class="lead">Dezelfde modellen, tools en MCP-verbindingen &mdash; maar elk geoptimaliseerd voor een ander type werk.</p>
+  <p class="lead">Dezelfde modellen onder de motorkap &mdash; drie interfaces voor verschillende typen werk.</p>
   <div class="eco-grid">
     <div class="eco-card chat">
       <div class="eco-icon"><i class="fas fa-comment-dots"></i></div>
       <h3>Claude Chat</h3>
       <div class="eco-sub">Conversatie &bull; Browser &bull; Geen setup</div>
-      <p>Conversatie in de browser met <strong style="color:var(--white)">artifacts</strong>: Claude maakt interactieve componenten, grafieken, diagrammen en HTML direct in het gesprek. Geen bestanden op je computer, geen integraties.</p>
+      <p>Conversatie in de browser. Maakt <strong style="color:var(--white)">artifacts</strong> direct in het gesprek: componenten, grafieken, diagrammen. Geen bestanden op je computer.</p>
       <div class="eco-tags">
         <span class="eco-tag">Artifacts</span>
         <span class="eco-tag">Projects</span>
         <span class="eco-tag">Web Search</span>
       </div>
-      <div class="eco-best"><strong>Verschil:</strong> Chat maakt artifacts <em>in het gesprek</em>, Cowork maakt <em>echte bestanden</em> op je computer</div>
+      <div class="eco-best"><strong>Voor wie:</strong> Iedereen &mdash; snel antwoord, geen setup nodig</div>
     </div>
     <div class="eco-card cowork">
       <div class="eco-icon"><i class="fas fa-laptop"></i></div>
       <h3>Cowork</h3>
       <div class="eco-sub">Agentic &bull; Desktop App</div>
-      <p>Dezelfde engine als Code &mdash; file system, code, MCP, sub-agents, skills &mdash; maar als desktop app. Maakt echte bestanden, bestuurt je browser, plant taken.</p>
+      <p>Agent die <strong style="color:var(--white)">echte bestanden</strong> maakt op je computer. Bestuurt je browser, plant taken, gebruikt MCP-integraties en skills.</p>
       <div class="eco-tags">
         <span class="eco-tag">Bestanden</span>
         <span class="eco-tag">Browser</span>
@@ -477,7 +478,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
       <div class="eco-icon"><i class="fas fa-terminal"></i></div>
       <h3>Claude Code</h3>
       <div class="eco-sub">Agentic &bull; Terminal / VS Code</div>
-      <p>Volledige agent in je IDE. Leest je codebase, schrijft code, runt tests, maakt PR's. File system, Git, MCP, sub-agents, skills, hooks.</p>
+      <p>Agent in je IDE. Leest je <strong style="color:var(--white)">codebase</strong>, schrijft code, runt tests, maakt PR's. Volledige Git-integratie en hooks.</p>
       <div class="eco-tags">
         <span class="eco-tag">CLAUDE.md</span>
         <span class="eco-tag">Git</span>
@@ -489,9 +490,9 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
   </div>
 
   <!-- Key insight -->
-  <div class="takeaway-box" style="margin-top:20px;text-align:left;padding:14px 20px">
-    <p style="font-size:.86rem;margin:0"><i class="fas fa-lightbulb" style="margin-right:6px;color:var(--accent)"></i>
-      <strong>Chat</strong> is een conversatie-tool met artifacts (interactieve content in het gesprek). <strong>Cowork</strong> en <strong>Code</strong> zijn agents &mdash; ze draaien dezelfde engine (file system, code, MCP, sub-agents) met een andere interface. Cowork is voor iedereen als desktop app, Code is voor developers in de terminal.
+  <div class="takeaway-box" style="margin-top:20px;text-align:left;padding:16px 22px">
+    <p style="font-size:1.05rem;margin:0;line-height:1.7"><i class="fas fa-lightbulb" style="margin-right:8px;color:var(--accent)"></i>
+      <strong>Chat</strong> = conversatie met artifacts in het gesprek. <strong>Cowork</strong> en <strong>Code</strong> = agents met dezelfde engine (file system, code, MCP, sub-agents), maar andere interface. Cowork als desktop app, Code in de terminal.
     </p>
   </div>
 </section>
@@ -500,7 +501,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="context">
   <div class="section-tag">Onder de Motorkap</div>
   <h2>Context maakt het verschil</h2>
-  <p class="lead">Dezelfde AI, dezelfde vraag &mdash; maar met context over jouw project, team en tooling levert het radicaal betere resultaten.</p>
+  <p class="lead">Dezelfde AI, dezelfde vraag &mdash; maar met context over je project, team en tooling krijg je bruikbare output in plaats van generieke antwoorden.</p>
 
   <div class="context-compare">
     <div class="ctx-box without" data-label="Zonder context">
@@ -544,7 +545,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
           <i class="fas fa-wand-magic-sparkles" style="color:var(--purple);font-size:.8rem;width:18px;text-align:center"></i>
           <div><span style="font-size:.8rem;font-weight:600;color:var(--white)">Skills</span><br><span style="font-size:.68rem;color:var(--text-muted)">Code review, PPTX, testing, etc.</span></div>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(90deg,rgba(212,165,116,.08),transparent);border:1px solid rgba(212,165,116,.12);border-radius:8px">
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(90deg,rgba(46,49,143,.08),transparent);border:1px solid rgba(46,49,143,.12);border-radius:8px">
           <i class="fas fa-brain" style="color:var(--accent);font-size:.8rem;width:18px;text-align:center"></i>
           <div><span style="font-size:.8rem;font-weight:600;color:var(--white)">Memory</span><br><span style="font-size:.68rem;color:var(--text-muted)">Voorkeuren over sessies heen</span></div>
         </div>
@@ -569,7 +570,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         - Nieuwe endpoints: altijd Swagger docs
       </div>
       <div style="margin-top:8px;font-size:.74rem;color:var(--text-dim);padding:0 4px">
-        <i class="fas fa-lightbulb" style="margin-right:4px;color:var(--accent)"></i>Een onboarding-document voor AI. Hoe beter je context, hoe minder je corrigeert.
+        <i class="fas fa-lightbulb" style="margin-right:4px;color:var(--accent)"></i>Vergelijkbaar met een onboarding-document, maar dan voor de AI. Hoe completer, hoe minder je hoeft bij te sturen.
       </div>
     </div>
   </div>
@@ -578,8 +579,8 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <!-- ==================== 4. TOOLS ==================== -->
 <section id="tools">
   <div class="section-tag">Gereedschap</div>
-  <h2>11+ tools, onbeperkt uitbreidbaar</h2>
-  <p class="lead">Claude kiest zelf de juiste tool voor de taak. Ingebouwde tools + onbeperkt uitbreidbaar via MCP.</p>
+  <h2>De ingebouwde toolset</h2>
+  <p class="lead">Claude kiest zelf de juiste tool per stap. 11 tools standaard beschikbaar, uitbreidbaar via MCP.</p>
 
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px" id="toolGrid"></div>
 
@@ -591,7 +592,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <div id="tdCat2" style="font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px"></div>
         <p id="tdDesc2" style="font-size:.86rem;color:var(--text-muted);line-height:1.7;margin:0"></p>
       </div>
-      <pre id="tdExample2" style="background:rgba(0,0,0,.3);padding:14px;border-radius:8px;font-size:.78rem;color:var(--blue);font-family:'SF Mono','Cascadia Code',monospace;line-height:1.5;margin:0;flex-shrink:0;max-width:340px"></pre>
+      <pre id="tdExample2" style="background:rgba(46,49,143,.04);padding:14px;border-radius:8px;font-size:.78rem;color:var(--blue);font-family:'SF Mono','Cascadia Code',monospace;line-height:1.5;margin:0;flex-shrink:0;max-width:340px"></pre>
     </div>
   </div>
 </section>
@@ -600,7 +601,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="skills">
   <div class="section-tag">Deep Dive</div>
   <h2>Skills — Wat zit er in de prompt?</h2>
-  <p class="lead">Een skill is een SKILL.md bestand met instructies die Claude leest voor het beginnen. Van 10 regels tot een complete pipeline. Bekijk de echte inhoud.</p>
+  <p class="lead">Een skill is een SKILL.md bestand met instructies die Claude leest voor het beginnen. Van 10 regels tot een complete pipeline.</p>
 
   <div class="tabs">
     <div class="tab active" onclick="switchTab(this,'skills')">Hoe het werkt</div>
@@ -616,7 +617,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
       <div class="sf-step"><div class="sf-icon">🔍</div><div class="sf-label">Match</div><h4>Skill herkend</h4><p>Op basis van description in skill config</p></div>
       <div class="sf-step active"><div class="sf-icon">📖</div><div class="sf-label">Laden</div><h4>SKILL.md gelezen</h4><p>Claude leest de volledige instructieset</p></div>
       <div class="sf-step"><div class="sf-icon">⚙️</div><div class="sf-label">Uitvoering</div><h4>Stappen gevolgd</h4><p>Claude volgt de workflow uit de skill</p></div>
-      <div class="sf-step"><div class="sf-icon">✅</div><div class="sf-label">Output</div><h4>Resultaat</h4><p>Consistent, herhaalbaar, hoogwaardig</p></div>
+      <div class="sf-step"><div class="sf-icon">✅</div><div class="sf-label">Output</div><h4>Resultaat</h4><p>Zelfde kwaliteit, elke keer</p></div>
     </div>
     <div class="split" style="margin-top:24px">
       <div>
@@ -763,7 +764,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
     <div class="split">
       <div>
         <h3><span class="skill-ex-badge advanced" style="margin-right:8px">Uitgebreid</span>PPTX Presentatie Skill</h3>
-        <p style="color:var(--text-muted);font-size:.9rem;line-height:1.7;margin:12px 0">De meest uitgebreide built-in skill. Bevat design principes, kleurkeuze-logica, layout-variatie regels, conversie-scripts, en een visuele QA pipeline met sub-agents.</p>
+        <p style="color:var(--text-muted);font-size:.9rem;line-height:1.7;margin:12px 0">Een voorbeeld van een complexere skill. Bevat design principes, kleurkeuze-logica, layout-regels, conversie-scripts en een QA pipeline met sub-agents.</p>
         <div class="skill-flow" style="margin:20px 0">
           <div class="sf-step" style="min-width:100px"><div class="sf-icon">📊</div><div class="sf-label">Input</div><h4>Data + prompt</h4></div>
           <div class="sf-step" style="min-width:100px"><div class="sf-icon">🎨</div><div class="sf-label">Design</div><h4>Kleur + layout</h4></div>
@@ -773,7 +774,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
           <div class="sf-step" style="min-width:100px"><div class="sf-icon">✅</div><div class="sf-label">Output</div><h4>.pptx klaar</h4></div>
         </div>
         <div class="takeaway-box" style="text-align:left;padding:16px 20px;margin-top:8px">
-          <p style="font-size:.86rem"><i class="fas fa-key" style="margin-right:6px"></i>De PPTX skill bevat 200+ regels instructies, 4 Python scripts, en een complete QA loop. Dit is de standaard voor elke presentatie die Claude maakt.</p>
+          <p style="font-size:.86rem"><i class="fas fa-key" style="margin-right:6px"></i>De PPTX skill bevat ~200 regels instructies, 4 Python scripts en een QA loop. Elke presentatie die Claude maakt doorloopt dit proces.</p>
         </div>
       </div>
       <div>
@@ -813,8 +814,8 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <!-- ==================== 6. MCP ==================== -->
 <section id="mcp">
   <div class="section-tag">Integraties</div>
-  <h2>MCP — De universele connector</h2>
-  <p class="lead">Model Context Protocol: &eacute;&eacute;n standaard om Claude met elk extern systeem te verbinden. Denk aan USB-C voor AI.</p>
+  <h2>MCP — Model Context Protocol</h2>
+  <p class="lead">Een open standaard waarmee Claude verbinding maakt met externe systemen zoals Jira, Teams en databases.</p>
 
   <div class="mcp-arch">
     <div class="mcp-layer">
@@ -828,7 +829,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 
     <div class="mcp-connector">
       <div class="mc-line"></div>
-      <div class="mc-label">JSON-RPC Protocol</div>
+      <div class="mc-label">MCP &mdash; gestandaardiseerde koppeling</div>
       <div class="mc-line"></div>
     </div>
 
@@ -849,7 +850,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
       <div class="mf-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="mf-step"><div class="mf-icon">🤖</div><div class="mf-label">Claude</div><div class="mf-text">Herkent Jira + Teams MCP nodig</div></div>
       <div class="mf-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="mf-step"><div class="mf-icon"><i class="fab fa-jira" style="color:var(--blue)"></i></div><div class="mf-label">Jira MCP</div><div class="mf-text">Maakt ticket BUG-247 met juiste velden</div></div>
+      <div class="mf-step"><div class="mf-icon"><i class="fab fa-jira" style="color:var(--blue)"></i></div><div class="mf-label">Jira MCP</div><div class="mf-text">Maakt ticket met juiste velden en prioriteit</div></div>
       <div class="mf-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="mf-step"><div class="mf-icon"><i class="fab fa-microsoft" style="color:var(--purple)"></i></div><div class="mf-label">Teams MCP</div><div class="mf-text">Post ticket-link in #engineering</div></div>
       <div class="mf-arrow"><i class="fas fa-chevron-right"></i></div>
@@ -863,7 +864,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="plugins">
   <div class="section-tag">Extensies</div>
   <h2>Plugins</h2>
-  <p class="lead">Een app store voor Claude &mdash; bundel MCP-servers, skills en tools in &eacute;&eacute;n installeerbaar pakket.</p>
+  <p class="lead">Bundels van MCP-servers, skills en tools die je in &eacute;&eacute;n keer installeert.</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
     <div style="background:var(--surface);border:1px solid var(--border-accent);border-radius:14px;padding:24px">
@@ -873,30 +874,30 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
           <h3 style="margin:0;font-size:1rem">Wat is een plugin?</h3>
         </div>
       </div>
-      <p style="font-size:.84rem;color:var(--text-muted);line-height:1.7;margin-bottom:14px">Geen handmatige configuratie &mdash; installeer en je bent klaar. Vergelijkbaar met een VS Code extension of Teams app.</p>
-      <div style="font-size:.82rem;color:var(--text-muted);line-height:1.9">
+      <p style="font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:14px">Vergelijkbaar met een VS Code extension of Teams app. Installeer en het werkt.</p>
+      <div style="font-size:1rem;color:var(--text-muted);line-height:1.9">
         <div><i class="fas fa-box-open" style="margin-right:8px;color:var(--purple);width:14px;text-align:center"></i>Bevat: MCP servers + skills + tools</div>
         <div><i class="fas fa-store" style="margin-right:8px;color:var(--purple);width:14px;text-align:center"></i>Beschikbaar via plugin marketplace</div>
         <div><i class="fas fa-download" style="margin-right:8px;color:var(--purple);width:14px;text-align:center"></i>E&eacute;n klik installeren, direct bruikbaar</div>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:2px">Voorbeeld plugins</div>
+      <div style="font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:2px">Voorbeeld plugins</div>
       <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px">
         <i class="fab fa-jira" style="color:var(--blue);font-size:1.1rem;width:20px;text-align:center"></i>
-        <div><div style="font-size:.82rem;font-weight:600;color:var(--white)">Atlassian Plugin</div><div style="font-size:.7rem;color:var(--text-muted)">Jira + Confluence integratie out-of-the-box</div></div>
+        <div><div style="font-size:1rem;font-weight:600;color:var(--white)">Atlassian Plugin</div><div style="font-size:.88rem;color:var(--text-muted)">Jira + Confluence integratie out-of-the-box</div></div>
       </div>
       <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px">
         <i class="fas fa-palette" style="color:var(--pink);font-size:1.1rem;width:20px;text-align:center"></i>
-        <div><div style="font-size:.82rem;font-weight:600;color:var(--white)">Design Plugin</div><div style="font-size:.7rem;color:var(--text-muted)">Accessibility review, UX copy, design critique</div></div>
+        <div><div style="font-size:1rem;font-weight:600;color:var(--white)">Design Plugin</div><div style="font-size:.88rem;color:var(--text-muted)">Accessibility review, UX copy, design critique</div></div>
       </div>
       <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px">
         <i class="fas fa-chart-bar" style="color:var(--green);font-size:1.1rem;width:20px;text-align:center"></i>
-        <div><div style="font-size:.82rem;font-weight:600;color:var(--white)">Data &amp; Analytics Plugin</div><div style="font-size:.7rem;color:var(--text-muted)">SQL queries, dashboards, visualisaties</div></div>
+        <div><div style="font-size:1rem;font-weight:600;color:var(--white)">Data &amp; Analytics Plugin</div><div style="font-size:.88rem;color:var(--text-muted)">SQL queries, dashboards, visualisaties</div></div>
       </div>
       <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px">
         <i class="fas fa-code" style="color:var(--blue);font-size:1.1rem;width:20px;text-align:center"></i>
-        <div><div style="font-size:.82rem;font-weight:600;color:var(--white)">Engineering Plugin</div><div style="font-size:.7rem;color:var(--text-muted)">Code review, debugging, architecture, CI/CD</div></div>
+        <div><div style="font-size:1rem;font-weight:600;color:var(--white)">Engineering Plugin</div><div style="font-size:.88rem;color:var(--text-muted)">Code review, debugging, architecture, CI/CD</div></div>
       </div>
     </div>
   </div>
@@ -906,7 +907,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="agents">
   <div class="section-tag">Architectuur</div>
   <h2>Sub-Agents &amp; Agent Teams</h2>
-  <p class="lead">Claude kan taken delegeren aan gespecialiseerde sub-agents. Van een simpele twee-agent setup tot een volledig enterprise team.</p>
+  <p class="lead">Claude kan taken delegeren aan gespecialiseerde sub-agents die parallel werken. Twee architectuurmodellen.</p>
 
   <div class="tabs">
     <div class="tab active" onclick="switchTab(this,'agents')">Architectuur: 2 Modellen</div>
@@ -917,114 +918,83 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 
   <!-- TAB 0: Architectuur vergelijking -->
   <div class="tab-content active" data-tab="Architectuur: 2 Modellen">
-    <p style="color:var(--text-muted);margin-bottom:24px">Claude Code kent twee multi-agent modellen. Sub-agents zijn ingebouwd en de standaard. Agent teams zijn een experimentele feature voor complexere samenwerking.</p>
-    <div style="display:grid;grid-template-columns:3fr 2fr;gap:28px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
 
       <!-- LEFT: Sub-Agents (de standaard) -->
       <div style="background:var(--surface2);border-radius:16px;padding:28px;border:2px solid rgba(110,170,220,.35);position:relative">
-        <div style="position:absolute;top:-12px;left:20px;background:var(--blue);color:var(--bg);font-size:.65rem;font-weight:700;padding:3px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:1px">De standaard</div>
-        <div style="text-align:center;margin-bottom:16px">
-          <h3 style="color:var(--blue);font-size:1.2rem;margin-bottom:4px">Sub-Agents</h3>
-          <span style="font-size:.78rem;color:var(--text-dim)">Delegatie &amp; Controle</span>
-        </div>
+        <div style="position:absolute;top:-12px;left:20px;background:var(--blue);color:var(--bg);font-size:.7rem;font-weight:700;padding:3px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:1px">De standaard</div>
+        <h3 style="color:var(--blue);font-size:1.3rem;margin-bottom:2px;text-align:center">Sub-Agents</h3>
+        <div style="text-align:center;font-size:.85rem;color:var(--text-dim);margin-bottom:18px">Manager delegeert, sub-agents rapporteren terug</div>
 
         <!-- Diagram -->
-        <div style="text-align:center;margin-bottom:18px">
-          <div style="display:inline-block;padding:12px 24px;background:var(--surface3);border:2px solid var(--blue);border-radius:10px;margin-bottom:4px">
-            <div style="font-size:.85rem;font-weight:600;color:var(--white)">&#129504; Hoofd-Agent (Parent)</div>
+        <div style="text-align:center;margin-bottom:20px">
+          <div style="display:inline-block;padding:12px 28px;background:var(--surface3);border:2px solid var(--blue);border-radius:10px">
+            <div style="font-size:.9rem;font-weight:600;color:var(--white)">&#129504; Hoofd-Agent</div>
           </div>
-          <div style="display:flex;justify-content:center;margin:6px 0">
-            <div style="width:1px;height:16px;background:var(--text-dim)"></div>
+          <div style="display:flex;justify-content:center;margin:8px 0 4px">
+            <span style="color:var(--blue);font-size:1rem">&darr;&nbsp;&nbsp;&darr;&nbsp;&nbsp;&darr;</span>
           </div>
-          <div style="display:flex;gap:4px;justify-content:center;margin-bottom:4px">
-            <span style="color:var(--text-dim)">&darr;</span>
-            <span style="color:var(--text-dim)">&darr;</span>
-            <span style="color:var(--text-dim)">&darr;</span>
+          <div style="display:flex;gap:8px;justify-content:center;margin-bottom:4px">
+            <div style="padding:10px 16px;background:var(--surface);border:1px solid rgba(110,170,220,.3);border-radius:8px;font-size:.8rem;color:var(--blue)">Sub-Agent</div>
+            <div style="padding:10px 16px;background:var(--surface);border:1px solid rgba(110,170,220,.3);border-radius:8px;font-size:.8rem;color:var(--blue)">Sub-Agent</div>
+            <div style="padding:10px 16px;background:var(--surface);border:1px solid rgba(110,170,220,.3);border-radius:8px;font-size:.8rem;color:var(--blue)">Sub-Agent</div>
           </div>
-          <div style="display:flex;gap:8px;justify-content:center">
-            <div style="padding:8px 12px;background:var(--surface);border:1px solid rgba(110,170,220,.3);border-radius:8px;font-size:.72rem;color:var(--blue)">Specialist</div>
-            <div style="padding:8px 12px;background:var(--surface);border:1px solid rgba(110,170,220,.3);border-radius:8px;font-size:.72rem;color:var(--blue)">Specialist</div>
-            <div style="padding:8px 12px;background:var(--surface);border:1px solid rgba(110,170,220,.3);border-radius:8px;font-size:.72rem;color:var(--blue)">Specialist</div>
+          <div style="display:flex;justify-content:center;margin-top:2px">
+            <span style="color:var(--text-dim);font-size:.9rem">&uarr;&nbsp;&nbsp;&uarr;&nbsp;&nbsp;&uarr;</span>
           </div>
-          <div style="display:flex;gap:4px;justify-content:center;margin-top:4px">
-            <span style="color:var(--text-dim)">&uarr;</span>
-            <span style="color:var(--text-dim)">&uarr;</span>
-            <span style="color:var(--text-dim)">&uarr;</span>
-          </div>
-          <div style="font-size:.62rem;color:var(--text-dim);font-style:italic">resultaat terug naar parent</div>
+          <div style="font-size:.72rem;color:var(--text-dim);font-style:italic;margin-top:2px">resultaat terug naar hoofd-agent</div>
         </div>
 
-        <!-- Properties -->
-        <div style="font-size:.82rem;line-height:2;color:var(--text-muted)">
-          <div><span style="color:var(--blue);font-weight:600">Ingebouwd:</span> Standaard in Claude Code, geen setup nodig</div>
-          <div><span style="color:var(--blue);font-weight:600">Communicatie:</span> Alleen met parent &mdash; niet onderling</div>
-          <div><span style="color:var(--blue);font-weight:600">Worktrees:</span> Elke sub-agent kan op een eigen branch werken</div>
-          <div><span style="color:var(--blue);font-weight:600">Kosten:</span> Tokens binnen dezelfde sessie</div>
-          <div><span style="color:var(--blue);font-weight:600">Resultaat:</span> Voorspelbaar &mdash; parent houdt volledige controle</div>
-        </div>
-
-        <div style="margin-top:14px;padding:10px 14px;background:rgba(110,170,220,.06);border-radius:8px;border-left:3px solid var(--blue)">
-          <div style="font-size:.78rem;color:var(--text-muted)"><i class="fas fa-building" style="margin-right:6px;color:var(--blue)"></i>Vergelijk: een manager die taken uitdeelt. Medewerkers rapporteren alleen aan de manager, niet aan elkaar.</div>
+        <!-- Key points -->
+        <div style="font-size:.88rem;line-height:2;color:var(--text-muted)">
+          <div><span style="color:var(--blue)">&#10004;</span> Ingebouwd &mdash; geen setup nodig</div>
+          <div><span style="color:var(--blue)">&#10004;</span> Communicatie alleen via parent</div>
+          <div><span style="color:var(--blue)">&#10004;</span> Voorspelbaar en kosteneffici&euml;nt</div>
         </div>
       </div>
 
       <!-- RIGHT: Agent Teams (geavanceerd) -->
       <div style="background:var(--surface2);border-radius:16px;padding:28px;border:1px solid var(--border);position:relative;opacity:.85">
-        <div style="position:absolute;top:-12px;left:20px;background:var(--surface3);color:var(--text-dim);font-size:.65rem;font-weight:700;padding:3px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;border:1px solid var(--border)">Experimenteel</div>
-        <div style="text-align:center;margin-bottom:16px">
-          <h3 style="color:var(--green);font-size:1.1rem;margin-bottom:4px">Agent Teams</h3>
-          <span style="font-size:.78rem;color:var(--text-dim)">Samenwerking &amp; Onafhankelijkheid</span>
-        </div>
+        <div style="position:absolute;top:-12px;left:20px;background:var(--surface3);color:var(--text-dim);font-size:.7rem;font-weight:700;padding:3px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;border:1px solid var(--border)">Experimenteel</div>
+        <h3 style="color:var(--green);font-size:1.3rem;margin-bottom:2px;text-align:center">Agent Teams</h3>
+        <div style="text-align:center;font-size:.85rem;color:var(--text-dim);margin-bottom:18px">Agents werken zelfstandig via gedeelde takenlijst</div>
 
         <!-- Diagram -->
-        <div style="text-align:center;margin-bottom:18px">
-          <div style="display:inline-block;padding:10px 18px;background:var(--surface3);border:2px solid var(--green);border-radius:10px;margin-bottom:4px">
-            <div style="font-size:.8rem;font-weight:600;color:var(--white)">&#129504; Team Lead</div>
+        <div style="text-align:center;margin-bottom:20px">
+          <div style="display:inline-block;padding:12px 28px;background:var(--surface3);border:2px solid var(--green);border-radius:10px">
+            <div style="font-size:.9rem;font-weight:600;color:var(--white)">&#129504; Team Lead</div>
           </div>
-          <div style="display:flex;justify-content:center;margin:4px 0">
+          <div style="display:flex;justify-content:center;margin:6px 0">
             <div style="width:1px;height:8px;background:var(--text-dim)"></div>
           </div>
-          <div style="display:inline-block;padding:4px 14px;background:var(--surface3);border:1px solid rgba(126,203,161,.3);border-radius:6px;font-size:.68rem;color:var(--green);margin-bottom:6px">
+          <div style="display:inline-block;padding:6px 18px;background:var(--surface3);border:1px solid rgba(126,203,161,.3);border-radius:6px;font-size:.78rem;color:var(--green);margin-bottom:8px">
             <i class="fas fa-list-check" style="margin-right:4px"></i>Shared Task List
           </div>
-          <div style="display:flex;gap:4px;justify-content:center;margin-bottom:4px">
-            <span style="color:var(--text-dim)">&darr;</span>
-            <span style="color:var(--text-dim)">&darr;</span>
-            <span style="color:var(--text-dim)">&darr;</span>
+          <div style="display:flex;justify-content:center;margin-bottom:6px">
+            <span style="color:var(--green);font-size:1rem">&darr;&nbsp;&nbsp;&darr;&nbsp;&nbsp;&darr;</span>
           </div>
-          <div style="display:flex;gap:6px;justify-content:center">
-            <div style="padding:6px 10px;background:var(--surface);border:1px solid rgba(126,203,161,.3);border-radius:8px;font-size:.68rem;color:var(--green)">Agent</div>
-            <div style="padding:6px 10px;background:var(--surface);border:1px solid rgba(126,203,161,.3);border-radius:8px;font-size:.68rem;color:var(--green)">Agent</div>
-            <div style="padding:6px 10px;background:var(--surface);border:1px solid rgba(126,203,161,.3);border-radius:8px;font-size:.68rem;color:var(--green)">Agent</div>
+          <div style="display:flex;gap:8px;justify-content:center">
+            <div style="padding:10px 16px;background:var(--surface);border:1px solid rgba(126,203,161,.3);border-radius:8px;font-size:.8rem;color:var(--green)">Agent</div>
+            <div style="padding:10px 16px;background:var(--surface);border:1px solid rgba(126,203,161,.3);border-radius:8px;font-size:.8rem;color:var(--green)">Agent</div>
+            <div style="padding:10px 16px;background:var(--surface);border:1px solid rgba(126,203,161,.3);border-radius:8px;font-size:.8rem;color:var(--green)">Agent</div>
           </div>
-          <div style="font-size:.58rem;color:var(--green);margin-top:4px">&harr; direct onderling &harr;</div>
+          <div style="font-size:.72rem;color:var(--green);margin-top:6px">&harr; communiceren direct onderling &harr;</div>
         </div>
 
-        <!-- Properties -->
-        <div style="font-size:.78rem;line-height:2;color:var(--text-muted)">
-          <div><span style="color:var(--green);font-weight:600">Setup:</span> Experimentele feature in Claude Code</div>
-          <div><span style="color:var(--green);font-weight:600">Communicatie:</span> Shared task list + mailbox systeem</div>
-          <div><span style="color:var(--green);font-weight:600">Kosten:</span> Hoger &mdash; elke agent is eigen sessie</div>
-          <div><span style="color:var(--green);font-weight:600">Status:</span> Experimenteel, standaard uitgeschakeld</div>
-        </div>
-
-        <div style="margin-top:14px;padding:10px 14px;background:rgba(126,203,161,.06);border-radius:8px;border-left:3px solid var(--green)">
-          <div style="font-size:.78rem;color:var(--text-muted)"><i class="fas fa-building" style="margin-right:6px;color:var(--green)"></i>Vergelijk: een scrumteam met een Jira-board. Teamleden stemmen onderling af.</div>
+        <!-- Key points -->
+        <div style="font-size:.88rem;line-height:2;color:var(--text-muted)">
+          <div><span style="color:var(--green)">&#10004;</span> Agents zien elkaars werk</div>
+          <div><span style="color:var(--green)">&#10004;</span> Mailbox voor onderlinge communicatie</div>
+          <div><span style="color:var(--green)">&#10004;</span> Hogere kosten &mdash; elke agent is eigen sessie</div>
         </div>
       </div>
     </div>
 
-    <!-- Wanneer wat -->
-    <div style="display:grid;grid-template-columns:3fr 2fr;gap:28px;margin-top:20px">
-      <div class="takeaway-box" style="text-align:left;padding:16px 20px">
-        <p style="font-size:.88rem;margin-bottom:0"><i class="fas fa-check-circle" style="margin-right:6px;color:var(--blue)"></i>
-          <strong>In de praktijk gebruik je sub-agents voor 95% van de taken.</strong> Ze zijn ingebouwd, voorspelbaar, en goedkoper. Beide modellen ondersteunen worktrees (parallel op branches werken). Agent teams zijn een experimentele feature die je apart aanzet &mdash; met een shared task list en mailbox waarmee agents onderling communiceren.
-        </p>
-      </div>
-      <div style="padding:14px 18px;background:var(--surface2);border-radius:12px;border:1px solid var(--border);display:flex;flex-direction:column;justify-content:center">
-        <div style="font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Wanneer agent teams?</div>
-        <div style="font-size:.8rem;color:var(--text-muted);line-height:1.6">Wanneer agents elkaars werk moeten zien en daarop moeten reageren &mdash; bijvoorbeeld een architect die een API contract wijzigt waar 3 andere agents van afhangen.</div>
-      </div>
+    <!-- Takeaway -->
+    <div class="takeaway-box" style="text-align:left;padding:16px 24px;margin-top:22px">
+      <p style="font-size:.92rem;margin-bottom:0"><i class="fas fa-check-circle" style="margin-right:8px;color:var(--blue)"></i>
+        <strong>Sub-agents zijn de standaard voor 95% van de taken.</strong> Agent teams zet je apart aan wanneer agents elkaars werk moeten zien en daarop reageren.
+      </p>
     </div>
   </div>
 
@@ -1074,45 +1044,44 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
           <div style="font-size:.68rem;color:var(--text-dim);margin-top:6px;max-width:140px;margin-inline:auto">"Hoe werkt de API auth flow?"</div>
         </div>
       </div>
-      <div class="af-connector"><div class="af-vline"></div><div style="font-size:.65rem;color:var(--accent);margin:4px 0">laden indien nodig</div><div class="af-vline"></div></div>
+      <div class="af-connector"><div class="af-vline"></div><div style="font-size:.7rem;color:var(--accent);margin:4px 0">laden indien nodig</div><div class="af-vline"></div></div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
         <!-- Business skills -->
         <div class="af-node" style="padding:8px 12px;background:var(--accent-glow);border-color:var(--border-accent)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-file-powerpoint" style="margin-right:4px;color:var(--orange)"></i>PPTX</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-file-powerpoint" style="margin-right:4px;color:var(--orange)"></i>PPTX</div>
         </div>
         <div class="af-node" style="padding:8px 12px;background:var(--accent-glow);border-color:var(--border-accent)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-file-word" style="margin-right:4px;color:var(--blue)"></i>DOCX</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-file-word" style="margin-right:4px;color:var(--blue)"></i>DOCX</div>
         </div>
         <div class="af-node" style="padding:8px 12px;background:var(--accent-glow);border-color:var(--border-accent)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-table" style="margin-right:4px;color:var(--green)"></i>Data Analysis</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-table" style="margin-right:4px;color:var(--green)"></i>Data Analysis</div>
         </div>
         <!-- Dev skills -->
         <div class="af-node" style="padding:8px 12px;background:rgba(110,170,220,.08);border-color:rgba(110,170,220,.2)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-code-compare" style="margin-right:4px;color:var(--blue)"></i>Code Review</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-code-compare" style="margin-right:4px;color:var(--blue)"></i>Code Review</div>
         </div>
         <div class="af-node" style="padding:8px 12px;background:rgba(110,170,220,.08);border-color:rgba(110,170,220,.2)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-bug" style="margin-right:4px;color:var(--red)"></i>Debug</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-bug" style="margin-right:4px;color:var(--red)"></i>Debug</div>
         </div>
         <div class="af-node" style="padding:8px 12px;background:rgba(110,170,220,.08);border-color:rgba(110,170,220,.2)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-vial" style="margin-right:4px;color:var(--green)"></i>Testing Strategy</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-vial" style="margin-right:4px;color:var(--green)"></i>Testing Strategy</div>
         </div>
         <div class="af-node" style="padding:8px 12px;background:rgba(110,170,220,.08);border-color:rgba(110,170,220,.2)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-sitemap" style="margin-right:4px;color:var(--purple)"></i>Architecture</div>
-        </div>
-        <div class="af-node" style="padding:8px 12px;background:rgba(110,170,220,.08);border-color:rgba(110,170,220,.2)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-database" style="margin-right:4px;color:var(--cyan)"></i>SQL Queries</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-sitemap" style="margin-right:4px;color:var(--purple)"></i>Architecture</div>
         </div>
         <div class="af-node" style="padding:8px 12px;background:rgba(184,143,232,.08);border-color:rgba(184,143,232,.2)">
-          <div class="afn-title" style="font-size:.72rem"><i class="fas fa-plus" style="margin-right:4px;color:var(--purple)"></i>Custom Skills</div>
+          <div class="afn-title" style="font-size:.78rem"><i class="fas fa-plus" style="margin-right:4px;color:var(--purple)"></i>Custom Skills</div>
         </div>
       </div>
-      <div style="text-align:center;margin-top:8px;font-size:.62rem;color:var(--text-dim)">
+      <div style="text-align:center;margin-top:8px;font-size:.68rem;color:var(--text-dim)">
         <span style="display:inline-block;width:8px;height:8px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:2px;margin-right:3px;vertical-align:middle"></span>Business
         <span style="margin:0 8px">|</span>
         <span style="display:inline-block;width:8px;height:8px;background:rgba(110,170,220,.08);border:1px solid rgba(110,170,220,.2);border-radius:2px;margin-right:3px;vertical-align:middle"></span>Development
         <span style="margin:0 8px">|</span>
         <span style="display:inline-block;width:8px;height:8px;background:rgba(184,143,232,.08);border:1px solid rgba(184,143,232,.2);border-radius:2px;margin-right:3px;vertical-align:middle"></span>Zelf te maken
       </div>
+
+      <!-- Removed skill flow -->
     </div>
   </div>
 
@@ -1120,7 +1089,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
   <div class="tab-content" data-tab="Voorbeeld: PO + Dev">
     <p style="color:var(--text-muted);margin-bottom:20px"><span style="display:inline-block;padding:2px 8px;background:rgba(110,170,220,.12);border:1px solid rgba(110,170,220,.25);border-radius:4px;font-size:.72rem;color:var(--blue);margin-right:6px;vertical-align:middle">Sub-Agent patroon</span> Simpelste multi-agent setup: de orchestrator delegeert aan twee sub-agents met verschillende rollen.</p>
     <div class="agent-flow">
-      <div style="text-align:center;margin-bottom:8px;font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px">Opdracht: "Bouw een zoekfilter component"</div>
+      <div style="text-align:center;margin-bottom:8px;font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px">Opdracht: "Bouw een zoekfilter component"</div>
       <div class="af-row">
         <div class="af-node orchestrator">
           <div class="afn-icon">🧠</div>
@@ -1170,9 +1139,9 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 
   <!-- TAB 3: Enterprise -->
   <div class="tab-content" data-tab="Voorbeeld: Enterprise Team">
-    <p style="color:var(--text-muted);margin-bottom:20px"><span style="display:inline-block;padding:2px 8px;background:rgba(126,203,161,.12);border:1px solid rgba(126,203,161,.25);border-radius:4px;font-size:.72rem;color:var(--green);margin-right:6px;vertical-align:middle">Agent Team patroon</span> Meerdere onafhankelijke agents met eigen worktrees, een gedeelde task board, en directe communicatie. Na merge neemt jullie bestaande CI/CD het over.</p>
+    <p style="color:var(--text-muted);margin-bottom:20px"><span style="display:inline-block;padding:2px 8px;background:rgba(126,203,161,.12);border:1px solid rgba(126,203,161,.25);border-radius:4px;font-size:.72rem;color:var(--green);margin-right:6px;vertical-align:middle">Agent Team patroon</span> Meerdere onafhankelijke agents met eigen worktrees, een gedeelde task board, en directe communicatie.</p>
     <div class="agent-flow" style="padding:24px">
-      <div style="text-align:center;margin-bottom:12px;font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px">Opdracht: "Bouw een user dashboard met statistieken"</div>
+      <div style="text-align:center;margin-bottom:12px;font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px">Opdracht: "Bouw een user dashboard met statistieken"</div>
 
       <!-- Team Lead -->
       <div class="af-row">
@@ -1218,7 +1187,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
           </div>
           <div class="output-preview" style="font-size:.66rem;margin-top:6px;padding:8px">
             <span class="file-badge ts" style="font-size:.56rem">routes/</span><br>
-            Prisma models<br>
+            Data models<br>
             REST handlers
           </div>
         </div>
@@ -1268,26 +1237,6 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
         <div style="padding:6px 12px;background:rgba(239,108,108,.08);border:1px solid rgba(239,108,108,.2);border-radius:6px;font-size:.72rem;font-family:monospace;color:var(--red)"><i class="fas fa-code-branch" style="margin-right:4px"></i>worktree/devops</div>
       </div>
 
-      <!-- Handoff to existing CI/CD -->
-      <div class="af-connector"><div class="af-vline"></div></div>
-      <div style="text-align:center;font-size:.62rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px">Handoff — Claude stopt hier, jullie pipeline neemt over</div>
-      <div style="display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap">
-        <div style="display:flex;gap:8px;align-items:center">
-          <div style="padding:10px 16px;background:rgba(212,165,116,.1);border:1px solid rgba(212,165,116,.25);border-radius:8px;text-align:center">
-            <div style="font-size:.68rem;color:var(--accent);font-weight:600">Claude doet</div>
-            <div style="font-size:.75rem;color:var(--text);margin-top:4px">Lint & test draaien</div>
-            <div style="font-size:.75rem;color:var(--text)">PR aanmaken</div>
-            <div style="font-size:.75rem;color:var(--text)">Pipeline config schrijven</div>
-          </div>
-          <div style="font-size:1.4rem;color:var(--text-dim)">→</div>
-          <div style="padding:10px 16px;background:rgba(110,170,220,.1);border:1px solid rgba(110,170,220,.25);border-radius:8px;text-align:center">
-            <div style="font-size:.68rem;color:var(--blue);font-weight:600">Azure DevOps doet</div>
-            <div style="font-size:.75rem;color:var(--text);margin-top:4px">CI/CD pipeline</div>
-            <div style="font-size:.75rem;color:var(--text)">Build & deploy</div>
-            <div style="font-size:.75rem;color:var(--text)">Release management</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1296,7 +1245,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="hooks">
   <div class="section-tag">Veiligheid &amp; Controle</div>
   <h2>Hooks &amp; Permissions</h2>
-  <p class="lead">Volledige controle over wat Claude mag doen. Van per-tool permissions tot automatische validatie met hooks.</p>
+  <p class="lead">Hoe je bepaalt wat Claude wel en niet mag doen: per-tool permissions en automatische validatie via hooks.</p>
 
   <div class="split">
     <div>
@@ -1371,7 +1320,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="praktijk">
   <div class="section-tag">In de Praktijk</div>
   <h2>Input → Claude → Output</h2>
-  <p class="lead">Concrete voor-en-na scenario's. Wat gaat erin, wat komt eruit?</p>
+  <p class="lead">Concrete scenario's: wat gaat erin, wat komt eruit, en hoelang duurt het.</p>
 
   <div class="tabs">
     <div class="tab active" onclick="switchTab(this,'praktijk')"><i class="fas fa-laptop" style="margin-right:6px"></i>Business (Cowork)</div>
@@ -1382,7 +1331,7 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
     <div class="practice-grid">
       <div class="practice-card">
         <div class="pc-header">
-          <div class="pc-icon" style="background:rgba(212,165,116,.1);color:var(--accent)"><i class="fas fa-file-powerpoint"></i></div>
+          <div class="pc-icon" style="background:rgba(46,49,143,.1);color:var(--accent)"><i class="fas fa-file-powerpoint"></i></div>
           <h4>Data → Presentatie</h4>
         </div>
         <div class="pc-body">
@@ -1519,51 +1468,51 @@ h3{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:10px}
 <section id="afsluiting">
   <div class="section-tag">Samenvatting &amp; Demo</div>
   <h2 style="text-align:center">Wat hebben we gezien?</h2>
-  <p class="lead" style="text-align:center;margin:0 auto 36px">Van concept tot architectuur &mdash; nu is het tijd om het in actie te zien.</p>
+  <p class="lead" style="text-align:center;margin:0 auto 36px">Overzicht van de concepten. In deel 2 laten we het in de praktijk zien.</p>
 
   <div class="key-points">
     <div class="kp">
       <div class="kp-icon">🤖</div>
-      <h4>Agentic, niet generatief</h4>
-      <p>Claude voert taken uit — leest code, schrijft bestanden, runt commando's, maakt documenten.</p>
+      <h4>Agent, geen chatbot</h4>
+      <p>Claude voert taken uit: leest code, schrijft bestanden, runt commando's, maakt documenten.</p>
     </div>
     <div class="kp">
       <div class="kp-icon">🔧</div>
-      <h4>Onbeperkt uitbreidbaar</h4>
-      <p>11+ tools ingebouwd, eindeloos uit te breiden via MCP servers, skills en plugins.</p>
+      <h4>Uitbreidbaar via MCP</h4>
+      <p>11 tools standaard, uit te breiden met MCP servers, skills en plugins.</p>
     </div>
     <div class="kp">
       <div class="kp-icon">🛡️</div>
-      <h4>Veilig &amp; controleerbaar</h4>
-      <p>Per-tool permissions, pre/post hooks en audit logging.</p>
+      <h4>Controle ingebouwd</h4>
+      <p>Per-tool permissions, pre/post hooks, audit logging.</p>
     </div>
     <div class="kp">
       <div class="kp-icon">👥</div>
-      <h4>Schaalt met je team</h4>
-      <p>Van solo gebruik tot multi-agent teams met worktree isolation.</p>
+      <h4>Solo of multi-agent</h4>
+      <p>Werkt voor individueel gebruik of als team van agents met worktree isolation.</p>
     </div>
   </div>
 
   <!-- Transition to live demo -->
   <div style="margin-top:40px;text-align:center">
-    <div style="display:inline-block;padding:28px 48px;background:linear-gradient(135deg,rgba(212,165,116,.12),rgba(212,165,116,.03));border:2px solid var(--accent);border-radius:18px">
+    <div style="display:inline-block;padding:28px 48px;background:linear-gradient(135deg,rgba(46,49,143,.12),rgba(46,49,143,.03));border:2px solid var(--accent);border-radius:18px">
       <div style="font-size:.72rem;text-transform:uppercase;letter-spacing:3px;color:var(--accent);margin-bottom:10px;font-weight:700">Deel 2</div>
       <h2 style="font-size:1.8rem;margin-bottom:8px">Live Demo</h2>
       <div style="margin-bottom:20px"></div>
       <div style="display:flex;gap:16px;justify-content:center">
         <div style="padding:12px 20px;background:var(--surface);border:1px solid rgba(239,108,108,.25);border-radius:10px;text-align:center">
           <i class="fas fa-comment-dots" style="font-size:1.2rem;color:var(--red);display:block;margin-bottom:6px"></i>
-          <div style="font-size:.82rem;font-weight:600;color:var(--white)">Chat</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--white)">Chat</div>
           <div style="font-size:.68rem;color:var(--text-dim)">Artifacts &amp; conversatie</div>
         </div>
-        <div style="padding:12px 20px;background:var(--surface);border:1px solid rgba(212,165,116,.25);border-radius:10px;text-align:center">
+        <div style="padding:12px 20px;background:var(--surface);border:1px solid rgba(46,49,143,.25);border-radius:10px;text-align:center">
           <i class="fas fa-laptop" style="font-size:1.2rem;color:var(--accent);display:block;margin-bottom:6px"></i>
-          <div style="font-size:.82rem;font-weight:600;color:var(--white)">Cowork</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--white)">Cowork</div>
           <div style="font-size:.68rem;color:var(--text-dim)">Bestanden &amp; browser</div>
         </div>
         <div style="padding:12px 20px;background:var(--surface);border:1px solid rgba(110,170,220,.25);border-radius:10px;text-align:center">
           <i class="fas fa-terminal" style="font-size:1.2rem;color:var(--blue);display:block;margin-bottom:6px"></i>
-          <div style="font-size:.82rem;font-weight:600;color:var(--white)">Code</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--white)">Code</div>
           <div style="font-size:.68rem;color:var(--text-dim)">Codebase &amp; agents</div>
         </div>
       </div>
